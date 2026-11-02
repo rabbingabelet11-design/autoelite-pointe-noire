@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoElite Pointe-Noire - Concessionnaire de Véhicules de Prestige</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; color: #333; scroll-behavior: smooth; }
+        
+        /* Barre de navigation */
+        nav { background-color: #111; color: white; display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        nav .logo { font-size: 1.5em; font-weight: bold; color: #e74c3c; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        nav ul li a:hover { color: #e74c3c; }
+
+        /* En-tête / Hero */
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center center/cover; color: white; padding: 140px 20px 90px; text-align: center; }
+        .hero h1 { font-size: 2.8em; margin-bottom: 10px; color: #fff; }
+        .hero p { font-size: 1.2em; color: #ddd; max-width: 700px; margin: 0 auto; }
+
+        /* Contenu principal */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2.2em; color: #111; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: #e74c3c; margin: 10px auto 0; border-radius: 2px; }
+
+        /* Grille des véhicules */
+        .cars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .car-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .car-card:hover { transform: translateY(-7px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .car-card img { width: 100%; height: 200px; object-fit: cover; }
+        .car-info { padding: 20px; text-align: center; }
+        .car-card h3 { margin-bottom: 10px; font-size: 1.2em; color: #111; }
+        .price { color: #27ae60; font-weight: bold; font-size: 1.3em; margin-bottom: 15px; }
+        .btn-whatsapp { display: inline-block; background-color: #25D366; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.95em; transition: background-color 0.3s; }
+        .btn-whatsapp:hover { background-color: #1ebe5d; }
+
+        /* Section À propos & Contact */
+        .info-section { background: white; border-radius: 12px; padding: 40px; margin-top: 60px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .contact-box { background: #f8f9fa; padding: 25px; border-left: 5px solid #e74c3c; border-radius: 6px; }
+        .contact-box h3, .about-box h3 { margin-bottom: 15px; color: #111; }
+        .contact-box p, .about-box p { margin-bottom: 10px; line-height: 1.6; color: #555; }
+
+        /* Réseau sociaux */
+        .social-links { display: flex; gap: 15px; margin-top: 15px; }
+        .social-links a { background: #111; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; font-size: 0.9em; transition: background 0.3s; }
+        .social-links a:hover { background: #e74c3c; }
+
+        /* Pied de page */
+        footer { background-color: #111; color: white; text-align: center; padding: 30px; margin-top: 60px; }
+        footer p { color: #aaa; font-size: 0.95em; }
+    </style>
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <nav>
+        <div class="logo">AutoElite Pointe-Noire</div>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#catalogue">Catalogue</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- En-tête Hero -->
+    <div class="hero">
+        <h1>AutoElite Pointe-Noire</h1>
+        <p>Votre concessionnaire de référence pour véhicules neufs et récents. Robustesse, élégance et fiabilité adaptées aux routes du Congo.</p>
+    </div>
+
+    <!-- Contenu Principal -->
+    <div class="container" id="catalogue">
+        <h2 class="section-title">Catalogue Exclusif de Véhicules</h2>
+        <div class="cars-grid">
+            
+            <!-- 1. Toyota RAV4 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="Toyota RAV4">
+                <div class="car-info">
+                    <h3>Toyota RAV4 (Édition 2024)</h3>
+                    <p class="price">22 500 000 FCFA</p>
+                    <a href="https://wa.me/242059941800?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20Toyota%20RAV4" class="btn-whatsapp" target="_blank">Commander via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 2. Toyota Prado -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf" alt="Toyota Prado TXL">
+                <div class="car-info">
+                    <h3>Toyota Prado TXL</h3>
+                    <p class="price">35 000 000 FCFA</p>
+                    <a href="https://wa.me/242059941800?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20Toyota%20Prado" class="btn-whatsapp" target="_blank">Commander via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 3. Jetour Dashing -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935" alt="Jetour Dashing">
+                <div class="car-info">
+                    <h3>Jetour Dashing (Neuf 0 km)</h3>
+                    <p class="price">19 000 000 FCFA</p>
+                    <a href="https://wa.me/242059941800?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20Jetour%20Dashing" class="btn-whatsapp" target="_blank">Commander via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 4. Jetour X70 Plus -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341" alt="Jetour X70 Plus">
+                <div class="car-info">
+                    <h3>Jetour X70 Plus (SUV Familial)</h3>
+                    <p class="price">17 800 000 FCFA</p>
+                    <a href="https://wa.me/242059941800?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20Jetour%20X70%20Plus" class="btn-whatsapp" target="_blank">Commander via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 5. Jetour X90 Plus -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6" alt="Jetour X90 Plus">
+                <div class="car-info">
+                    <h3>Jetour X90 Plus</h3>
+                    <p class="price">21 000 000 FCFA</p>
+                    <a href="https://wa.me/242059941800?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20Jetour%20X90%20Plus" class="btn-whatsapp" target="_blank">Commander via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 6. Range Rover Evoque -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" alt="Range Rover Evoque">
+                <div class="car-info">
+                    <h3>Range Rover Evoque</h3>
+                    <p class="price">32 000 000 FCFA</p>
+                    <a href="https://wa.me/242059941800?text=Bonjour,%20je%20suis%20intéressé%20par%20le%20Range%20Rover%20Evoque" class="btn-whatsapp" target="_blank">Commander via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 7. Range Rover Velar -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935" alt="Range Rover Velar">
+                <div class="car-info">
+                    <h3>Range Rover Velar</h3>
+                    <p class="price">39 000 000 FCFA</p>
+                    <a href="https://wa.me/242059941800?text=Bonjour,%20je%20suis%20intéressé%20par%20le%20Range%20Rover%20Velar" class="btn-whatsapp" target="_blank">Commander via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 8. Range Rover Sport -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Range Rover Sport">
+                <div class="car-info">
+                    <h3>Range Rover Sport</h3>
+                    <p class="price">45 000 000 FCFA</p>
+                    <a href="https://wa.me/242059941800?text=Bonjour,%20je%20suis%20intéressé%20par%20le%20Range%20Rover%20Sport" class="btn-whatsapp" target="_blank">Commander via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 9. Hyundai Tucson -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341" alt="Hyundai Tucson">
+                <div class="car-info">
+                    <h3>Hyundai Tucson (Récent)</h3>
+                    <p class="price">15 500 000 FCFA</p>
+                    <a href="https://wa.me/242059941800?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20Hyundai%20Tucson" class="btn-whatsapp" target="_blank">Commander via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 10. Hyundai Santa Fe -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="Hyundai Santa Fe">
+                <div class="car-info">
+                    <h3>Hyundai Santa Fe</h3>
+                    <p class="price">18 000 000 FCFA</p>
+                    <a href="https://wa.me/242059941800?text=Bonjour,%20je%20suis%20intéressé%20par%20la%20Hyundai%20Santa%20Fe" class="btn-whatsapp" target="_blank">Commander via WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Section À Propos & Contact -->
+        <div class="info-section" id="apropos">
+            <h2 class="section-title" style="font-size: 1.8em; margin-bottom: 20px;">À Propos & Localisation</h2>
+            <div class="info-grid">
+                <div class="about-box">
+                    <h3>Notre Entreprise</h3>
+                    <p>Fondée et dirigée par <strong>M. Alex Ngabélé</strong>, <strong>AutoElite Pointe-Noire</strong> vous accompagne dans l'acquisition de véhicules haut de gamme rigoureusement inspectés.</p>
+                    <p>Nous garantissons des transactions transparentes, un dédouanement complet et un service après-vente irréprochable au cœur de la ville océane.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank">WhatsApp</a>
+                        <a href="#" target="_blank">TikTok</a>
+                        <a href="#" target="_blank">Facebook</a>
+                    </div>
+                </div>
+
+                <div class="contact-box" id="contact">
+                    <h3>Informations & Contacts</h3>
+                    <p><strong>Propriétaire :</strong> M. Alex Ngabélé</p>
+                    <p><strong>Téléphone 1 (WhatsApp) :</strong> +242 05 994 18 00</p>
+                    <p><strong>Téléphone 2 :</strong> +242 06 994 18 00</p>
+                    <p><strong>Localisation :</strong> Avenue principale, Pointe-Noire, République du Congo</p>
+                    <p><strong>Horaires d'ouverture :</strong> Lundi - Samedi : 08h00 - 18h30</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2026 AutoElite Pointe-Noire - Dirigé par M. Alex Ngabélé. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
